@@ -1,12 +1,21 @@
+import SortPopap from "../SortPopap/SortPopap";
 import Catigories from "../Сatigories/Catigories"
 
 const Home = () => {
-
+  const sortItems = [
+    { name: 'популяр ности', type: 'popular' },
+    { name: 'Цена', type: 'prise' },
+    { name: 'По алфавиту', type: 'alphabet' }
+];
   const catigories = ['Мясные', 'Вегетарианская', 'Гриль', 'Острые', 'Закрытые']
   return (
     <div className="content">
       <div className="container">
-        <Catigories items={catigories}/>
+      <div className="content__top">
+      <Catigories items={catigories} />
+      <SortPopap items={sortItems} onclickItems={(name) => console.log(name)}/>    
+            </div>
+        
         <h2 className="content__title">Все пиццы</h2>
         <div className="content__items">
           <div className="pizza-block">

@@ -27,7 +27,9 @@ const SortPopap = ({items}) => {
     useEffect(() => {
         document.body.addEventListener('click', toggle)
     }, [])
-
+    //  это функция отвечает за 
+    
+    
     return (
         <div ref={sofref} className="sort">
             <div className="sort__label">
@@ -52,7 +54,9 @@ const SortPopap = ({items}) => {
 
             {active ? <div className="sort__popup">
                 <ul>
-                    {items.map((obg, index) => <li onClick={() => visibil(index)} className={active === index ? "active" : null}>{obg.name}</li>)}
+                    {items.map((obg, index) => <li 
+                    key={`${obg} ${index}`}
+                    onClick={() => visibil(index)} className={active === index ? "active" : null}>{obg.name}</li>)}
                 </ul>
             </div>
                 : null}

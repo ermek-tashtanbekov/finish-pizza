@@ -1,5 +1,4 @@
 import { useState } from "react"
-import SortPopap from "../SortPopap/SortPopap"
 
 const Catigories = ({ items, }) => {
 
