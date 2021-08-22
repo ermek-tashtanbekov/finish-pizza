@@ -2,12 +2,11 @@ import { useState } from "react"
 import SortPopap from "./SortPopap/SortPopap"
 
 const Catigories = ({ items }) => {
-    const [visibiliti, SetVisibiliti] = useState(0)
-    const [active, SetActve] = useState(0)
-    
+
+    const [active, SetActve] = useState(false)
+
     function onselectAtem(index) {
         SetActve(index)
-       SetVisibiliti(null)
     }
 
     console.log(onselectAtem)
@@ -15,9 +14,9 @@ const Catigories = ({ items }) => {
         <div className="content__top">
             <div className="categories">
                 <ul>
-                    <li  >Все</li>
-                    {items.map((obj, index) => <li
-                        key={`${obj} ${index}`}
+                    <li className={active === false ? "active" : ''} onClick={() => onselectAtem(false)} >Все</li>
+                    {items.map((obj, index) =>
+                     <li key={`${obj} ${index}`}
                         onClick={() => onselectAtem(index)}
                         className={active === index ? 'active' : null}
                     >{obj}</li>)}
