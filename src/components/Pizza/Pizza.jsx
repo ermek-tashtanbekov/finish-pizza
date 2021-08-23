@@ -1,7 +1,6 @@
-import { pi } from "prelude-ls";
+
 import { useState } from "react"
 import classNames from "classnames";
-import { disable } from "debug";
 const Pizza = ({ imageUrl, name, types, sizes, }) => {
   const [pizza, setPizza] = useState(types[0])
   const [typeSize, setTypesSize] = useState(sizes[0])
