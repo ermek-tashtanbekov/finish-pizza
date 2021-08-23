@@ -1,11 +1,20 @@
+import { pi } from "prelude-ls";
 import { useState } from "react"
-
+import classNames from "classnames";
+import { disable } from "debug";
 const Pizza = ({ imageUrl, name, types, sizes, }) => {
-   const [pizza, setPizza] = useState(types[0])
+  const [pizza, setPizza] = useState(types[0])
+  const [typeSize, setTypesSize] = useState(sizes[0])
+  const acableTypes = ['тонкое', 'традиционное'];
 
 
-   
-
+  function toogle(index) {
+    // setPizza(index)
+    setTypesSize(index)
+  }
+  function toogleTwo(index) {
+    setPizza(index)
+  }
 
   return (
     <div className="pizza-block">
@@ -17,11 +26,24 @@ const Pizza = ({ imageUrl, name, types, sizes, }) => {
       <h4 className="pizza-block__title">{name}</h4>
       <div className="pizza-block__selector">
         <ul>
-          <li className="active">тонкое</li>
-          <li>традиционное</li>
+          {acableTypes.map((obj, index) =>
+            <li
+              key={`${obj} ${index}`}
+              className={classNames({
+                active: pizza === index,
+                disabled: pizza === !types.includes(index)
+              })}
+              onClick={() => toogleTwo(index)}
+            >{obj}</li>)}
         </ul>
         <ul>
-          {sizes.map((obj, index) => <li key={`${obj} ${index}`}>{obj}</li>)}
+          {sizes.map((obj, index) => <li key={`${obj} ${index}`}
+            className={classNames({
+              active: typeSize === index,
+              disabled: typeSize === !sizes.includes(index)
+            })}
+            onClick={() => toogle(index)}
+          >{obj}</li>)}
         </ul>
       </div>
       <div className="pizza-block__bottom">
