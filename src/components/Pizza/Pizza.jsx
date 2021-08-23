@@ -39,7 +39,7 @@ const Pizza = ({ imageUrl, name, types, sizes, }) => {
           {sizes.map((obj, index) => <li key={`${obj} ${index}`}
             className={classNames({
               active: typeSize === index,
-              disabled: typeSize === !sizes.includes(index)
+              disabled: typeSize === !sizes.includes(obj)
             })}
             onClick={() => toogle(index)}
           >{obj}</li>)}

@@ -8,7 +8,7 @@ const Catigories = ({ items, }) => {
         SetActve(index)
     }
 
-    console.log(onselectAtem)
+    // console.log(onselectAtem)
     return (
         <div className="categories">
             <ul>

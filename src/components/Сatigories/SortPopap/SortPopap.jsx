@@ -8,7 +8,7 @@ const SortPopap = ({ items }) => {
     const [active, setActive] = useState(false)
     const [activeItems, setActiveItems] = useState(0)
     const activeLabel = items[activeItems].name
-    console.log(activeLabel)
+    // console.log(activeLabel)
 
     function setClik() {
         setActive(!active)
