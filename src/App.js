@@ -8,11 +8,7 @@ import Home from './components/Home/Home';
 import { fetchPizzas } from './store/action/pizzas';
 import {setPizzas} from './store/action/pizzas'
 function App() {
-  const dispatch = useDispatch();
- 
-  useEffect(() => {
-    dispatch(fetchPizzas())
-  }, [])
+
   
   return (
     <div className="wrapper">
