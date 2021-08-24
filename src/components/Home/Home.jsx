@@ -19,7 +19,7 @@ const Home = () => {
  
   useEffect(() => {
     dispatch(fetchPizzas())
-  }, [])
+  }, [dispatch])
 
   const sortItems = [
     { name: 'популяр ности', type: 'popular' },

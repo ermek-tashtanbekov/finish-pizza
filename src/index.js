@@ -4,12 +4,14 @@ import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import pizzas from './store/reducers/pizzas'
-import { combineReducers, createStore, applyMiddleware } from 'redux';
+import { combineReducers, createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const root = combineReducers({ pizzas, })
-const store = createStore(root,applyMiddleware(thunk));
+const store = createStore(root, composeEnhancers(applyMiddleware(thunk)));
 
 ReactDOM.render(
   <React.StrictMode>
