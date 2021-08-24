@@ -1,7 +1,7 @@
 
 import { useState } from "react"
 import classNames from "classnames";
-const Pizza = ({ imageUrl, name, types, sizes, }) => {
+const Pizza = ({ imageUrl, name, types, sizes,price }) => {
   const [pizza, setPizza] = useState(types[0])
   const [typeSize, setTypesSize] = useState(sizes[0])
   const acableTypes = ['тонкое', 'традиционное'];
@@ -46,7 +46,7 @@ const Pizza = ({ imageUrl, name, types, sizes, }) => {
         </ul>
       </div>
       <div className="pizza-block__bottom">
-        <div className="pizza-block__price">от 395 ₽</div>
+        <div className="pizza-block__price">от {price} ₽</div>
         <div className="button button--outline button--add">
           <svg
             width="12"
