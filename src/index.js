@@ -4,11 +4,12 @@ import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import pizzas from './store/reducers/pizzas'
-import { combineReducers, createStore } from 'redux';
+import { combineReducers, createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
 
 const root = combineReducers({ pizzas, })
-const store = createStore(root);
+const store = createStore(root,applyMiddleware(thunk));
 
 ReactDOM.render(
   <React.StrictMode>
