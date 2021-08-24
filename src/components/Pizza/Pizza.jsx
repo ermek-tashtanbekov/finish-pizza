@@ -1,6 +1,7 @@
 
 import { useState } from "react"
 import classNames from "classnames";
+import PropTypes from 'prop-types';
 const Pizza = ({ imageUrl, name, types, sizes,price }) => {
   const [pizza, setPizza] = useState(types[0])
   const [typeSize, setTypesSize] = useState(sizes[0])
@@ -67,4 +68,20 @@ const Pizza = ({ imageUrl, name, types, sizes,price }) => {
     </div>
   )
 }
+Pizza.propTypes = {
+  name: PropTypes.string,
+  imageUrl: PropTypes.string,
+  price: PropTypes.number,
+  types: PropTypes.arrayOf(PropTypes.number),
+  sizes: PropTypes.arrayOf(PropTypes.number),
+  onClickAddPizza: PropTypes.func,
+  addedCount: PropTypes.number,
+};
+
+Pizza.defaultProps = {
+  name: '---',
+  price: 0,
+  types: [],
+  sizes: [],
+};
 export default Pizza
